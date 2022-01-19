@@ -3,8 +3,9 @@ const { Post } = require('../models');
 
 router.get('/', async (rec,res) => {
     try {
-
-        res.render('dashboard', {})
+        const postData = await Post.findAll()
+        const posts = postData.map((post) => post.get({ plain: true }))
+        res.render('dashboard', { posts })
     } catch (err) {
         res.status(500).json(err)
     }  
