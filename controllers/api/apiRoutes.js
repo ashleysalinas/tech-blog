@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+
+  
 router.post('/login', async (req,res) => {
     try {
         const userData = await User.findOne(
@@ -10,21 +12,21 @@ router.post('/login', async (req,res) => {
               }  
             }
         )
-            const validaPassword = await userData.checkPassword(req.body.password)
+            const validPassword = await userData.checkPassword(req.body.password)
         if (!userData) {
-            res.status(400).json({ message: "Wrong email or password"});
+            res.status(400).json({ message: "Wrong email"});
             return;
         } 
 
-        if (!validaPassword) {
-            res.status(400).json({ message: "Wrong email or password"});
+        if (!validPassword) {
+            res.status(400).json({ message: "Wrong email"});
             return;
         }
 
-        req.session.save(() => {
+        req.session.save(() => 
+        {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
-            
         res.json({ user: userData, message: 'You are now logged in!' });
         })
     } catch (err) {

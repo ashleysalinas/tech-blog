@@ -12,7 +12,7 @@ const loginFormHandler = async (event) => {
         })
 
         if (response.ok) {
-            console.log('working!')
+            document.location.replace('/');
         }
     }
 
