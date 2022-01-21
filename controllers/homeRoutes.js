@@ -3,7 +3,14 @@ const { Post, User } = require('../models');
 
 router.get('/', async (rec,res) => {
     try {
-        const postData = await Post.findAll()
+        const postData = await Post.findAll({
+            include: [
+                {
+                    model: User,
+                    attributes: ['name']
+                }
+            ]
+        })
         const posts = postData.map((post) => post.get({ plain: true }))
         res.render('dashboard', { posts })
     } catch (err) {

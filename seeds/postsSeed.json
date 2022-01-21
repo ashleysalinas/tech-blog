@@ -1,10 +1,12 @@
 [
     {
         "post_title": "Tech Blog Now Functional",
-        "post_text": "It's the app you're using!"
+        "post_text": "It's the app you're using!",
+        "user_id": 1
     },
     {
         "post_title": "test test test",
-        "post_text": "test test"
+        "post_text": "test test",
+        "user_id": 2
     }
 ]

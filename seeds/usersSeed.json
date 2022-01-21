@@ -1,27 +1,27 @@
 [
     {
-      "name": "Sal",
-      "email": "sal@hotmail.com",
+      "name": "Spongebob Squarepants",
+      "email": "spongebob@bb.com",
       "password": "password12345"
     },
     {
-      "name": "Lernantino",
-      "email": "lernantino@gmail.com",
+      "name": "Patrick Starr",
+      "email": "patrick@bb.com",
       "password": "password12345"
     },
     {
-      "name": "Amiko",
-      "email": "amiko2k20@aol.com",
+      "name": "Sandy Cheeks",
+      "email": "sandy@bb.com",
       "password": "password12345"
     },
     {
-      "name": "Jordan",
-      "email": "jordan99@msn.com",
+      "name": "Eugene Krabs",
+      "email": "krabs@bb.com",
       "password": "password12345"
     },
     {
-      "name": "Blake",
-      "email": "the_blake@yahoo.com",
+      "name": "Sheldon Plankton",
+      "email": "plankton@bb.com",
       "password": "password12345"
     }
   ]
