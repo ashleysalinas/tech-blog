@@ -36,7 +36,6 @@ router.post('/login', async (req,res) => {
 })
 
 router.post('/post', withAuth, async (req,res) => {
-    console.log(req)
     try {
         const newPost = await Post.create({
             post_title: req.body.postTitle,
