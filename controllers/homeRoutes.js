@@ -41,8 +41,14 @@ router.get('/post/:id', async (req,res) => {
         res.status.json(err)
     }
 })
-router.get('/post', (req, res) => {
-    res.render('newPost');
+router.get('/post', withAuth, (req, res) => {
+    try {
+        res.render('newPost', {
+            logged_in:true
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 })
 
 router.get('/login', (req, res) => {
