@@ -48,5 +48,19 @@ router.post('/post', withAuth, async (req,res) => {
         res.status(400).json(err);
     } 
 })
-
+router.post('/signup', async (req,res) => {
+    try {
+        const newUser = await User.create(
+            req.body
+        );
+        req.session.save(() => {
+            req.session.user_id = newUser.id;
+            req.session.logged_in = true;
+            res.json({ user: newUser, message: 'You are now logged in!' });
+            res.status(200).json(newUser);
+          });
+    } catch (err) {
+        res.status(400).json(err);
+    }
+})
 module.exports = router;

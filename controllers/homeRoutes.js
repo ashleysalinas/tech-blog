@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const e = require('express');
 const req = require('express/lib/request');
 const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
@@ -15,13 +16,13 @@ router.get('/', async (req,res) => {
         })
         const posts = postData.map((post) => post.get({ plain: true }))
         res.render('dashboard', { posts,
-        logged_in: req.session.logged_in
-    });
+                logged_in: req.session.logged_in
+            })
+        
     } catch (err) {
         res.status(500).json(err)
     }  
-}
-)
+});
 
 router.get('/post/:id', async (req,res) => {
     try {
@@ -34,8 +35,10 @@ router.get('/post/:id', async (req,res) => {
             ]
         })
         const post = postData.get({ plain: true })
+        
         res.render('post', {
-            ...post
+            ...post,
+            logged_in: req.session.logged_in
         })
     } catch (err) {
         res.status.json(err)
