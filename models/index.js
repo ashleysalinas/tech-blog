@@ -1,6 +1,6 @@
 const User = require('./User');
 const Post = require('./Post');
-//const Comment = require('../../Documents/smu-dal-fsf-pt-01-2021-u-c-1-master/14-MVC/02-Homework/Comment');
+//const Comment = require('./Comment')
 
 User.hasMany(Post, {
     foreignKey: 'user_id'
@@ -23,6 +23,6 @@ User.hasMany(Comment, {
   
 Post.hasMany(Comment, {
     foreignKey: 'post_id'
-});
- */
+}); */
+
 module.exports = { User, Post};
