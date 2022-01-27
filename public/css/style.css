@@ -79,7 +79,12 @@ a {
     padding-bottom: 15px;
 }
 
-.login-form {
+.form {
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+}
+.login-form{
     background-color: white;
     border-radius: 15px;
     text-align: center;
@@ -125,4 +130,10 @@ display: none; /* Hidden by default */
     color: black;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  #post-text {
+    height: 100px;
+    width: 85%;
+    margin-top: 15px;
   }

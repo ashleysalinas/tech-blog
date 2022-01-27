@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const e = require('express');
 const req = require('express/lib/request');
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req,res) => {
@@ -11,8 +11,8 @@ router.get('/', async (req,res) => {
                 {
                     model: User,
                     attributes: ['name'],
-                }
-            ]
+                },
+            ],
         })
         const posts = postData.map((post) => post.get({ plain: true }))
         res.render('dashboard', { posts,
@@ -31,11 +31,16 @@ router.get('/post/:id', async (req,res) => {
                 {
                     model: User,
                     attributes: ['name']
-                }
+                },
+                {
+                    model: Comment,
+                    include: [User],
+                    attributes: ['comment_text', 'user_id'],
+                },
             ]
         })
         const post = postData.get({ plain: true })
-        
+        console.log(post)
         res.render('post', {
             ...post,
             logged_in: req.session.logged_in

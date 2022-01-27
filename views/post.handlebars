@@ -4,4 +4,13 @@
     <p>By: {{user.name}} on {{date_posted}}</p>
     </div>
     <p id="text">{{post_text}}</p>
+     {{#if logged_in}}
+    <a>Add Comment</a>
+    {{/if}}
 </div>
+{{#each comments as |comment|}}
+<div class="comment-section">
+    <p>{{comment.comment_text}}</p>
+    <p>{{user.name}}</p>
+</div>
+{{/each}}
