@@ -6,9 +6,15 @@ addButton.addEventListener("click", openModal)
 function openModal() {
     commentModal.style.display = "block";
 }
+var span = document.getElementById('comment-close')
 
- const newComment = async (event) => {
+span.onclick = function() {
+    commentModal.style.display = "none";
+  }
+
+const newComment = async (event) => {
     event.preventDefault();
+    
     const postId = document.getElementById('postID').value;
     const commentText = document.getElementById('commentText').value.trim();
     const response = await fetch('/api/comment', {
@@ -20,7 +26,6 @@ function openModal() {
     if (response.ok) {
         document.location.reload();
     }
-
 }
 const commentForm = document.getElementById('newCommentForm')
 commentForm.addEventListener('submit', newComment);

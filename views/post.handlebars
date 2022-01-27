@@ -1,7 +1,7 @@
 <div class="post">
     <div class="post-title">
     <h2 id="title">{{post_title}}</h2>
-    <p>By: {{user.name}} on {{date_posted}}</p>
+    <p>By: {{user.name}} on {{format_date date_posted}}</p>
     </div>
     <p id="text">{{post_text}}</p>
      {{#if logged_in}}
@@ -10,18 +10,19 @@
 </div>
 {{#each comments as |comment|}}
 <div class="comment-section">
-    <p>{{comment.comment_text}}</p>
-    <p>{{user.name}}</p>
+    <p id="comment-text">{{comment.comment_text}}</p>
+    <p id="comment-user">- {{user.name}}</p>
 </div>
 {{/each}}
 {{#if logged_in}}
 <div id="comment-modal">
-    <div>
+    <div class="modal-content">
         <form id = "newCommentForm">
         <h2>Add A Comment</h2>
-        <input type="hidden" name="post-id" value="{{id}}"" id="postID"/>
+        <input type="hidden" name="post-id" value="{{id}}" id="postID"/>
         <input type="text" id="commentText">
         <input type="submit" value="Add Comment">
+        <span class="close" id="comment-close">&times;</span>
         </form>
     </div>
 </div>
