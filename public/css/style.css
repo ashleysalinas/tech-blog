@@ -137,3 +137,7 @@ display: none; /* Hidden by default */
     width: 85%;
     margin-top: 15px;
   }
+
+  #comment-modal {
+    display: none;
+  }

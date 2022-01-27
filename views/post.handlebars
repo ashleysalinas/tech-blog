@@ -5,7 +5,7 @@
     </div>
     <p id="text">{{post_text}}</p>
      {{#if logged_in}}
-    <a>Add Comment</a>
+    <button id="comment-button">Add Comment</button>
     {{/if}}
 </div>
 {{#each comments as |comment|}}
@@ -14,3 +14,16 @@
     <p>{{user.name}}</p>
 </div>
 {{/each}}
+{{#if logged_in}}
+<div id="comment-modal">
+    <div>
+        <form id = "newCommentForm">
+        <h2>Add A Comment</h2>
+        <input type="hidden" name="post-id" value="{{id}}"" id="postID"/>
+        <input type="text" id="commentText">
+        <input type="submit" value="Add Comment">
+        </form>
+    </div>
+</div>
+{{/if}}
+<script type="text/javascript" src="/js/newComment.js"></script>
