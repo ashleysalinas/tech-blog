@@ -13,6 +13,7 @@ router.get('/', async (req,res) => {
                     attributes: ['name'],
                 },
             ],
+            order: [["id", "DESC"]]
         })
         const posts = postData.map((post) => post.get({ plain: true }))
         res.render('dashboard', { posts,

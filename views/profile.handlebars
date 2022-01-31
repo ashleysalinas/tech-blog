@@ -1,10 +1,10 @@
-<section>
-<h2>Hi, {{name}}!</h2>
-<h2>Your Posts</h2>
+<section class = "profile">
+<h2 id="profile-name">Hi, {{name}}!</h2>
+<h2 id="posts">Your Posts</h2>
 <div class="post-list">
 {{#each posts as |post|}}
-<div value="{{post.id}}">
-    <p id="post_title">{{post.post_title}}</p>
+<div class = "eachPost" value="{{post.id}}">
+    <p id="postTitle">{{post.post_title}}</p>
     <p>Date: {{format_date post.date_posted}}</p>
     <p id="post_text">{{post.post_text}}</p>
     <button class="edit-button" button-id="{{post.id}}">Edit</button>

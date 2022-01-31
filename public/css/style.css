@@ -184,3 +184,46 @@ display: none; /* Hidden by default */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); 
   }
+
+.post-list {
+    background-color: white;
+}
+
+.profile {
+    background-color: white;
+    display: float;
+}
+
+#profile-name {
+    color: #900C3F;
+    text-align: center;
+    display: block;
+}
+#posts {
+    color: #900C3F;
+    display: block;
+    text-align: center;
+}
+
+.edit-button {
+    background-color: white;
+    color: #900C3F;
+    border: none;
+    display: inline;
+}
+#delete {
+    background-color: white;
+    color: #900C3F;
+    border: none;
+    display: inline;
+}
+#postTitle {
+    display: block;
+}
+#post_text {
+    display: block;
+}
+.eachPost {
+    text-align: center;
+    display: float;
+}
