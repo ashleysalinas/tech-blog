@@ -94,4 +94,17 @@ router.put('/post/:id', withAuth, async (req,res) => {
         res.status(500).json(err)
     }
 })
+
+router.delete('/post/:id', withAuth, async (req,res) => {
+    try {
+        const deletePost = await Post.destroy({
+            where: {
+                id: req.body.id
+            }
+        })
+        res.status(200).json(deletePost)
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
 module.exports = router;

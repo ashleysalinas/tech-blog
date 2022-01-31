@@ -1,3 +1,5 @@
+
+
 const modal = document.querySelector('.edit-modal')
 const openModal = async(event) => {
     if (event.target.hasAttribute("button-id")) {
@@ -34,3 +36,22 @@ const submitEdit = async(event) => {
 }
 
 editForm.addEventListener('submit', submitEdit)
+
+const deleteButton = async (event) => {
+    if (event.target.hasAttribute("delete-id")) {
+        const id = event.target.value;
+        
+        const response = await fetch(`/api/post/${id}`, {
+            method: 'DELETE',
+            body: JSON.stringify({ id }),
+            headers: {'Content-Type': 'application/json'}
+        })
+
+        if (response.ok) {
+            document.location.reload();
+        } else {
+            console.log('nope')
+        }
+    }
+}
+document.querySelector('.post-list').addEventListener('click', deleteButton)

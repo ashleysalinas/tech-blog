@@ -3,12 +3,12 @@
 <h2>Your Posts</h2>
 <div class="post-list">
 {{#each posts as |post|}}
-<div>
+<div value="{{post.id}}">
     <p id="post_title">{{post.post_title}}</p>
     <p>Date: {{format_date post.date_posted}}</p>
     <p id="post_text">{{post.post_text}}</p>
     <button class="edit-button" button-id="{{post.id}}">Edit</button>
-    <button id="delete">Delete</button>
+    <button id="delete" delete-id="{{post.id}}" value="{{post.id}}">Delete</button>
 </div>
 <div class="edit-modal">
     <div class="modal-content">
