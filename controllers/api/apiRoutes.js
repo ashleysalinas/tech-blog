@@ -76,4 +76,22 @@ router.post('/comment', withAuth, async (req,res) => {
         res.status(400).json(err)
     }
 })
+
+router.put('/post/:id', withAuth, async (req,res) => {
+    try {
+        console.log(req)
+        const updatedPost = await Post.update({
+            post_title: req.body.editTitle,
+            post_text: req.body.editText
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        })
+        res.status(200).json(updatedPost)
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
 module.exports = router;
