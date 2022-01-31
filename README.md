@@ -12,7 +12,7 @@ This project was created for Week 14 - MVC of the Trilogy/Southern Methodist Uni
 * MySQl (ClearDB for Heroku)
 
 ## Deployment
-The site is deployed <a href="https://techblog14mvc.herokuapp.com/"> here.</a>.
+The site is deployed <a href="https://techblog14mvc.herokuapp.com/"> here.</a>
 
 ## Getting Started
  To make a local copy, use the directions below.
